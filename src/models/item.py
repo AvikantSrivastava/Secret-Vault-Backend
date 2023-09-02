@@ -1,8 +1,7 @@
 import os
 from pydantic import BaseModel
 from typing import Optional
-from database.database import Database
-from helper.hashing import hash
+from src.database.database import Database
 
 user_db = Database(os.environ.get('DETA'), 'users')
 bucket_db = Database(os.environ.get('DETA'), 'bucket')
@@ -13,4 +12,3 @@ class Item(BaseModel):
     value: str
     bucket_name: str 
     username: str
-    

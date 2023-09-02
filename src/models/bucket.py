@@ -1,8 +1,8 @@
 import os
 from pydantic import BaseModel
 from typing import Optional
-from database.database import Database
-from helper.hashing import hash
+from src.database.database import Database
+from src.helper.hashing import hash
 
 user_db = Database(os.environ.get('DETA'), 'users')
 bucket_db = Database(os.environ.get('DETA'), 'bucket')
@@ -36,5 +36,3 @@ def new_bucket(username, bucket_name):
 
     user_db.add(user_id, user_data)
     bucket_db.add(bucket_id, bucket_data)
-
-

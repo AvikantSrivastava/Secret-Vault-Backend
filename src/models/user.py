@@ -1,10 +1,7 @@
-import os
 import datetime
 from typing import List, Optional
 from pydantic import BaseModel, validator
-from database.database import Database
-from helper.auth import AuthHandler
-from helper.hashing import hash
+from src.helper.auth import AuthHandler
 
 auth_handler = AuthHandler()
 
@@ -47,4 +44,3 @@ class UserAuth():
             print('login failed')
             
         pass
-    
